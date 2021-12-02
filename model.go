@@ -49,7 +49,7 @@ func (u *user) createUser(db *sql.DB) error {
 }
 
 func getUsers(db *sql.DB, start, count int) ([]user, error) {
-	statement := `SELECT id, name, age FROM users LIMIT $1 OFFSET $2`,count, start)
+	
 	rows, err := db.Query( "SELECT id, name, age FROM users LIMIT $1 OFFSET $2", count, start)
 
 	if err != nil {
